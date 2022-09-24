@@ -1,8 +1,8 @@
 certifi
 Click
-Flask==1.1.2
-Flask-Cors==3.0.10
-gunicorn
+Flask
+Flask-Cors
+gunicorn==20.0.4
 itsdangerous
 Jinja2
 pandas
