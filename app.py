@@ -6,12 +6,12 @@ import pandas as pd
 
 app = Flask(__name__) # initializing a flask app
 
-@app.route('/',methods=['GET'])  # route to display the home page
+@app.route('/', methods=['GET'])  # route to display the home page
 @cross_origin()
 def homePage():
     return render_template("index.html")
 
-@app.route('/predict',methods=['POST','GET']) # route to show the predictions in a web UI
+@app.route('/predict', methods=['POST','GET']) # route to show the predictions in a web UI
 @cross_origin()
 def index():
     if request.method == 'POST':
