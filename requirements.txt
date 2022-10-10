@@ -13,3 +13,5 @@ scikit-learn==0.24.2
 scipy
 six
 Werkzeug
+pytest==6.2.2
+-e .
