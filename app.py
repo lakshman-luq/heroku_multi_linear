@@ -1,3 +1,5 @@
+from wsgiref import simple_server
+import os
 from flask import Flask, render_template, request
 from flask_cors import cross_origin
 import pickle
@@ -47,6 +49,14 @@ def index():
 
 
 
-if __name__=="__main__":
+#if __name__=="__main__":
     #app.run(host='127.0.0.1', port=8001, debug=True)
-	app.run(debug=True) # running the app
+#	app.run(debug=True) # running the app
+
+port = int(os.getenv("PORT", 5000))
+if __name__ == "__main__":
+    host = '0.0.0.0'
+    # port = 5000
+    httpd = simple_server.make_server(host, port, app)
+    # print("Serving on %s %d" % (host, port))
+    httpd.serve_forever()
